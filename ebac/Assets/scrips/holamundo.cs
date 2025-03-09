@@ -29,7 +29,7 @@ public class holamundo: MonoBehaviour
 
     private void LateUpdate()
     {
-        Debug.LogWarning("hola late ");
+        Debug.LogError("hola late ");
     }
 
     private void OnEnable()
