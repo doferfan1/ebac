@@ -6,43 +6,45 @@ using UnityEngine;
 public class bolo3 : MonoBehaviour
 {
     public GameObject cubo,cubo2;
-    bool bolc;
-    
+   public  bool bolca;
+    private bolo1 bolo1a;
+    private bolo2 bolo2a;
 
-// Start is called once before the first execution of Update after the MonoBehaviour is created
-void Start()
+
+    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    void Start()
     {
 
+        bolo1a = cubo.GetComponent<bolo1>();
+        bolo2a = cubo2.GetComponent<bolo2>();   
 
 
 
 
-        
     }
 
+   
     // Update is called once per frame
     void Update()
     {
         
     }
-    void FixedUpdate()
+    private void FixedUpdate()
     {
-        Color color = new Color(1, 1, 1);
-        Color color2 = new Color(0, 0, 0);
-       
-        Color color3= new Color(cubo.GetComponent<Renderer>().material.color.r, cubo.GetComponent<Renderer>().material.color.g, cubo.GetComponent<Renderer>().material.color.b);
-        Color color4 = new Color(cubo2.GetComponent<Renderer>().material.color.r, cubo2.GetComponent<Renderer>().material.color.g, cubo2.GetComponent<Renderer>().material.color.b);
-        if (color3 == color && color2==color4)
+        if (bolo1a.bolc == true && bolo2a.bolci == true)
         {
-          this.GetComponent<Renderer>().material.color = color;
+            this.GetComponent<Renderer>().material.color = Color.white;
+            
         }
         else
         {
-            this.GetComponent<Renderer>().material.color = color2;
+            this.GetComponent<Renderer>().material.color = Color.black;
+       
         }
 
 
 
 
     }
+
 }
