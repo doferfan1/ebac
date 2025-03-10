@@ -6,8 +6,8 @@ using UnityEngine;
 public class bolo1 : MonoBehaviour
 {
     
-    bool bolc;
-    int val1;
+   public bool bolc;
+    
    
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -23,24 +23,19 @@ public class bolo1 : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        val1 = Random.Range(0, 2);
+        
         
 
-        if (val1 == 0)
+        if (bolc)
         {
-            bolc = false;
-            Debug.Log("val1 is 0");
-            Color color = new Color(0,0,0);
-            this.GetComponent<Renderer>().material.color = color;
+           
             
+            this.GetComponent<Renderer>().material.color = Color.white;
+            bolc = false;
         }
         else
         {
-            bolc = true;
-            Color color = new Color(1,1, 1);
-            this.GetComponent<Renderer>().material.color = color;
-
-            Debug.Log("val1 is 1");
+            this.GetComponent<Renderer>().material.color = Color.black;
             bolc = true;
         }
 
